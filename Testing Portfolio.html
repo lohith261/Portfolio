@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandreddy Sri Sai Lohith | AI Engineer & Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+        :root {
+            --deep-space: #050508;
+            --neon-blue: #00d4ff;
+            --electric-purple: #7c3aed;
+            --neural-glow: rgba(0, 212, 255, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-space);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Neural Network Background */
+        #neural-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #0a0f1e 0%, #020408 100%);
+        }
+
+        /* AI Glass Cards */
+        .ai-card {
+            position: relative;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .ai-card:hover {
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.15), 0 10px 40px -10px rgba(124, 58, 237, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: shimmer 5s ease infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #00d4ff;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Neural Pulse Animation */
+        .neural-pulse {
+            animation: neuralPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(124, 58, 237, 0.4); }
+        }
+
+        /* Skill Orbit */
+        .skill-orbit {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Timeline Glow */
+        .timeline-line {
+            background: linear-gradient(to bottom, #00d4ff, #7c3aed, transparent);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Badge Glow */
+        .badge-glow {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .badge-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* Neural Connection Lines */
+        .connection-line {
+            stroke: rgba(0, 212, 255, 0.1);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        /* Matrix Rain Effect (subtle) */
+        .matrix-bg {
+            position: absolute;
+            opacity: 0.03;
+            pointer-events: none;
+            font-family: monospace;
+            color: #00d4ff;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Neural Network Canvas -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-tighter gradient-text">BSL.</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#aiexpertise" class="hover:text-cyan-400 transition-colors">AI Expertise</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <a href="mailto:bandreddysrisailohith@gmail.com" class="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm hover:bg-cyan-500/20 transition-all flex items-center gap-2">
+                <span>Get in Touch</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center relative px-6 pt-16">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 reveal active">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/80 border border-cyan-500/30 text-xs text-cyan-400">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    <span>B.Tech AI • Open to AI Engineering Roles</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1]">
+                    Architecting<br>
+                    <span class="gradient-text">Intelligent Systems</span>
+                </h1>
+                
+                <div class="h-8 text-xl text-slate-400 font-light">
+                    <span id="typewriter" class="typing-cursor"></span>
+                </div>
+
+                <p class="text-slate-400 max-w-lg leading-relaxed text-lg">
+                    AI-First Full Stack Engineer with 2 years production experience in 
+                    <span class="text-cyan-400">LLM orchestration</span>, 
+                    <span class="text-purple-400">vector database architecture</span>, and 
+                    <span class="text-pink-400">intelligent workflow automation</span>.
+                </p>
+
+                <div class="flex flex-wrap gap-3 pt-4">
+                    <a href="https://github.com/lohith261" target="_blank" class="ai-card px-6 py-3 rounded-full flex items-center space-x-2 text-sm hover:scale-105 transition-transform">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/srisailohith/" target="_blank" class="ai-card px-6 py-3 rounded-full flex items-center space-x-2 text-sm hover:scale-105 transition-transform">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:bandreddysrisailohith@gmail.com" class="ai-card px-6 py-3 rounded-full flex items-center space-x-2 text-sm hover:scale-105 transition-transform border-pink-500/30">
+                        <i data-lucide="mail" class="w-4 h-4 text-pink-400"></i>
+                        <span class="text-pink-400">Email Me</span>
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-4 pt-6 max-w-md">
+                    <div class="text-center p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+                        <div class="text-2xl font-bold text-cyan-400">2+</div>
+                        <div class="text-xs text-slate-500">Years AI/ML</div>
+                    </div>
+                    <div class="text-center p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+                        <div class="text-2xl font-bold text-purple-400">53%</div>
+                        <div class="text-xs text-slate-500">Latency ↓</div>
+                    </div>
+                    <div class="text-center p-3 rounded-lg bg-slate-900/50 border border-slate-800">
+                        <div class="text-2xl font-bold text-pink-400">50M+</div>
+                        <div class="text-xs text-slate-500">Vectors</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center reveal delay-200">
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <!-- Rotating Rings -->
+                    <div class="absolute inset-0 border border-cyan-500/20 rounded-full animate-[spin_12s_linear_infinite] neural-pulse"></div>
+                    <div class="absolute inset-4 border border-purple-500/20 rounded-full animate-[spin_18s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-8 border border-pink-500/10 rounded-full animate-[spin_24s_linear_infinite]"></div>
+                    
+                    <!-- Photo -->
+                    <div class="absolute inset-12 rounded-full overflow-hidden badge-glow bg-slate-900 border-2 border-cyan-500/20">
+                        <img src="https://files.kimi通义.com/user-upload/attached_image.png" alt="Sri Sai Lohith" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <!-- Floating AI Badges -->
+                    <div class="absolute -right-4 top-10 ai-card px-4 py-2 rounded-lg text-xs skill-orbit badge-glow z-20">
+                        <span class="text-cyan-400 font-semibold">Gemini</span> / OpenAI
+                    </div>
+                    <div class="absolute -left-8 top-1/3 ai-card px-4 py-2 rounded-lg text-xs skill-orbit badge-glow z-20" style="animation-delay: 1s;">
+                        <span class="text-purple-400 font-semibold">Vector DB</span> Expert
+                    </div>
+                    <div class="absolute -right-2 bottom-20 ai-card px-4 py-2 rounded-lg text-xs skill-orbit badge-glow z-20" style="animation-delay: 2s;">
+                        <span class="text-pink-400 font-semibold">RAG</span> Systems
+                    </div>
+                    
+                    <!-- Brain Icon Centered Behind -->
+                    <div class="absolute inset-0 flex items-center justify-center -z-10 opacity-10">
+                        <i data-lucide="brain-circuit" class="w-64 h-64 text-cyan-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Expertise Grid -->
+    <section id="aiexpertise" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">AI <span class="gradient-text">Architecture</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Production-grade implementation of modern AI stack components, from foundation model orchestration to vector storage optimization.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- LLM Orchestration -->
+                <div class="ai-card p-6 rounded-2xl reveal group">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 flex items-center justify-center mb-4 text-cyan-400 group-hover:scale-110 transition-transform border border-cyan-500/20">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">LLM Orchestration</h3>
+                    <p class="text-slate-400 text-sm mb-4">Production integration of Gemini & OpenAI APIs with advanced prompt engineering and chain-of-thought implementations.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/20 text-xs text-cyan-300">Prompt Engineering</span>
+                        <span class="px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/20 text-xs text-cyan-300">Function Calling</span>
+                        <span class="px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/20 text-xs text-cyan-300">RAG</span>
+                    </div>
+                </div>
+
+                <!-- Vector Infrastructure -->
+                <div class="ai-card p-6 rounded-2xl reveal delay-100 group border-purple-500/20">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center mb-4 text-purple-400 group-hover:scale-110 transition-transform border border-purple-500/20">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Vector Infrastructure</h3>
+                    <p class="text-slate-400 text-sm mb-4">Optimized semantic search at scale. Improved throughput by <span class="text-purple-400 font-bold">53%</span> handling 50M+ vectors in production.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/20 text-xs text-purple-300">Pinecone</span>
+                        <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/20 text-xs text-purple-300">FAISS</span>
+                        <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/20 text-xs text-purple-300">Embeddings</span>
+                    </div>
+                </div>
+
+                <!-- Intelligent Workflows -->
+                <div class="ai-card p-6 rounded-2xl reveal delay-200 group border-pink-500/20">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500/20 to-pink-600/10 flex items-center justify-center mb-4 text-pink-400 group-hover:scale-110 transition-transform border border-pink-500/20">
+                        <i data-lucide="workflow" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Intelligent Workflows</h3>
+                    <p class="text-slate-400 text-sm mb-4">Event-driven AI pipeline architecture using AWS Step Functions for stateful, fault-tolerant ML inference chains.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/20 text-xs text-pink-300">Step Functions</span>
+                        <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/20 text-xs text-pink-300">Lambda</span>
+                        <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/20 text-xs text-pink-300">Event-Driven</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional AI Skills -->
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
+                <div class="p-4 rounded-xl bg-slate-900/30 border border-slate-800 text-center hover:border-cyan-500/30 transition-colors">
+                    <i data-lucide="network" class="w-6 h-6 mx-auto mb-2 text-cyan-400"></i>
+                    <p class="text-sm font-medium">Graph Analytics</p>
+                    <p class="text-xs text-slate-500">Neo4j/Cypher</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/30 border border-slate-800 text-center hover:border-purple-500/30 transition-colors">
+                    <i data-lucide="code" class="w-6 h-6 mx-auto mb-2 text-purple-400"></i>
+                    <p class="text-sm font-medium">Full Stack</p>
+                    <p class="text-xs text-slate-500">React/Node/Spring</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/30 border border-slate-800 text-center hover:border-pink-500/30 transition-colors">
+                    <i data-lucide="cloud" class="w-6 h-6 mx-auto mb-2 text-pink-400"></i>
+                    <p class="text-sm font-medium">Cloud AI</p>
+                    <p class="text-xs text-slate-500">AWS/GCP</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-900/30 border border-slate-800 text-center hover:border-cyan-500/30 transition-colors">
+                    <i data-lucide="test-tube" class="w-6 h-6 mx-auto mb-2 text-cyan-400"></i>
+                    <p class="text-sm font-medium">MLOps</p>
+                    <p class="text-xs text-slate-500">CI/CD Pipelines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 px-6 relative bg-slate-950/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center reveal">Production <span class="gradient-text">Experience</span></h2>
+
+            <div class="relative">
+                <!-- Vertical Line -->
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 timeline-line"></div>
+
+                <!-- ADP -->
+                <div class="relative flex flex-col md:flex-row items-start mb-16 reveal">
+                    <div class="hidden md:block w-1/2 pr-8 text-right">
+                        <h3 class="text-2xl font-bold text-white">Member Technical</h3>
+                        <p class="text-cyan-400 font-medium text-lg">ADP</p>
+                        <p class="text-slate-500 text-sm mb-2">Sept 2023 - Present • Hyderabad</p>
+                        <div class="inline-flex items-center px-3 py-1 rounded-full bg-cyan-950/30 border border-cyan-500/20 text-xs text-cyan-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 mr-2 animate-pulse"></span>
+                            Currently Building
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-500 border-4 border-slate-950 z-10 shadow-[0_0_20px_rgba(6,182,212,0.6)]"></div>
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 md:hidden mb-2">
+                        <h3 class="text-xl font-bold text-white">Member Technical</h3>
+                        <p class="text-cyan-400 font-medium">ADP</p>
+                        <p class="text-slate-500 text-sm">Sept 2023 - Present</p>
+                    </div>
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 space-y-4">
+                        <div class="ai-card p-5 rounded-xl border-l-2 border-l-cyan-500">
+                            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400"></i>
+                                AI Integration & LLM Orchestration
+                            </h4>
+                            <p class="text-sm text-slate-400">Integrated vector databases (Pinecone, FAISS) into microservices, increasing semantic search throughput by <span class="text-cyan-400 font-bold">53%</span> and supporting real-time recommendation systems for 50M+ datasets.</p>
+                        </div>
+                        
+                        <div class="ai-card p-5 rounded-xl border-l-2 border-l-purple-500">
+                            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+                                <i data-lucide="zap" class="w-4 h-4 text-purple-400"></i>
+                                Graph Database Optimization
+                            </h4>
+                            <p class="text-sm text-slate-400">Implemented Cypher query optimization over 9-month project, accelerating Neo4j graph transactions by <span class="text-purple-400 font-bold">45%</span> for high-volume analytics.</p>
+                        </div>
+
+                        <div class="ai-card p-5 rounded-xl border-l-2 border-l-pink-500">
+                            <h4 class="font-semibold text-white mb-2 flex items-center gap-2">
+                                <i data-lucide="server" class="w-4 h-4 text-pink-400"></i>
+                                Distributed AI Workflows
+                            </h4>
+                            <p class="text-sm text-slate-400">Architected event-driven workflow orchestration using AWS Step Functions and Lambda, managing stateful execution for AI inference pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="relative flex flex-col md:flex-row items-start reveal">
+                    <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8 md:text-right order-1 md:order-1 space-y-2">
+                        <div class="ai-card p-5 rounded-xl inline-block text-left md:text-right border-r-2 border-r-purple-500 md:border-r-0 md:border-l-0">
+                            <p class="text-lg font-semibold text-white">B.Tech Artificial Intelligence</p>
+                            <p class="text-purple-400 text-sm">Full Scholarship • Anurag University</p>
+                            <p class="text-slate-500 text-sm">Hyderabad • 2023</p>
+                            <div class="mt-3 flex flex-wrap gap-2 md:justify-end">
+                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">Machine Learning</span>
+                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">Deep Learning</span>
+                                <span class="px-2 py-1 rounded bg-slate-800 text-xs text-slate-300">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-purple-500 border-4 border-slate-950 z-10"></div>
+                    <div class="hidden md:block md:w-1/2 md:pl-8 order-2 md:order-2">
+                        <h3 class="text-2xl font-bold text-white">Education</h3>
+                        <p class="text-purple-400 font-medium">Specialized in AI</p>
+                        <p class="text-slate-500">Foundation in classical ML with focus on modern LLM architectures</p>
+                    </div>
+                    <div class="ml-12 md:ml-0 md:hidden order-2 mt-2">
+                        <h3 class="text-xl font-bold text-white">Education</h3>
+                        <p class="text-purple-400 font-medium">Anurag University</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Award -->
+            <div class="mt-12 reveal">
+                <div class="ai-card p-6 rounded-2xl max-w-2xl mx-auto flex items-center gap-4 border-yellow-500/20 bg-yellow-950/10">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="trophy" class="w-6 h-6 text-yellow-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white">National Hackathon Runner Up</h4>
+                        <p class="text-sm text-slate-400">Computer Society of India (CSI) • 2021 • 2nd Prize among all National universities for "Safe..." project • ₹7,000 Award</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center reveal">Intelligent <span class="gradient-text">Applications</span></h2>
+            <p class="text-center text-slate-400 mb-16 max-w-2xl mx-auto reveal">End-to-end AI systems built with modern stack architecture and production-grade scalability.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- AI Content Assistant -->
+                <div class="group relative rounded-2xl overflow-hidden ai-card reveal">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 via-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-cyan-400/20 transition-colors"></div>
+                    
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">AI Content Assistant</h3>
+                                <p class="text-cyan-400 text-sm">Full-Stack AI Platform</p>
+                            </div>
+                            <a href="#" class="p-2 rounded-full bg-slate-800/50 hover:bg-cyan-500/20 transition-colors border border-slate-700 hover:border-cyan-500/50">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Multi-modal content analysis engine with hybrid web-scraping pipeline. 
+                            Automates unstructured data ingestion (text, URLs, images, documents) and 
+                            generates actionable insights using Google's Gemini API.
+                        </p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+                                <span>Prompt engineering for summarization & analysis</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+                                <span>React/TypeScript frontend with real-time streaming</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400"></i>
+                                <span>Node.js/Express backend with vector storage</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-xs text-cyan-300">Node.js</span>
+                            <span class="px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-xs text-cyan-300">React</span>
+                            <span class="px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-xs text-cyan-300">TypeScript</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/30 text-xs text-purple-300">Gemini API</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/30 text-xs text-purple-300">Web Scraping</span>
+                        </div>
+                    </div>
+                    <div class="h-1 w-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+
+                <!-- StudyBuddy -->
+                <div class="group relative rounded-2xl overflow-hidden ai-card reveal delay-100 border-purple-500/20">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -mr-32 -mt-32 group-hover:bg-purple-400/20 transition-colors"></div>
+                    
+                    <div class="p-8 relative z-10">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-1">StudyBuddy</h3>
+                                <p class="text-purple-400 text-sm">AI-Enhanced Learning Platform</p>
+                            </div>
+                            <a href="#" class="p-2 rounded-full bg-slate-800/50 hover:bg-purple-500/20 transition-colors border border-slate-700 hover:border-purple-500/50">
+                                <i data-lucide="external-link" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+
+                        <p class="text-slate-400 mb-6 leading-relaxed">
+                            Collaborative EdTech platform with WebSocket-based real-time interactions.
+                            Features personalized learning pathways and AI-driven content recommendations
+                            for optimized engagement.
+                        </p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2 text-sm text-slate-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400"></i>
+                                <span>Real-time collaboration via WebSocket</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400"></i>
+                                <span>Personalized user engagement algorithms</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-300">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-purple-400"></i>
+                                <span>CI/CD: GitHub → Netlify zero-downtime deploys</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/30 text-xs text-purple-300">React</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-950/50 border border-purple-500/30 text-xs text-purple-300">TypeScript</span>
+                            <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/30 text-xs text-pink-300">WebSocket</span>
+                            <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/30 text-xs text-pink-300">CI/CD</span>
+                            <span class="px-3 py-1 rounded-full bg-pink-950/50 border border-pink-500/30 text-xs text-pink-300">SaaS</span>
+                        </div>
+                    </div>
+                    <div class="h-1 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-cyan-950/20 via-transparent to-transparent pointer-events-none"></div>
+        
+        <!-- Neural Network Background Effect -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Let's Build the <span class="gradient-text">Future with AI</span></h2>
+            <p class="text-slate-400 mb-12 text-lg max-w-2xl mx-auto">
+                Seeking roles in AI Engineering, LLM Integration, or Intelligent Systems Architecture.
+                Ready to deploy production-grade AI solutions at scale.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+                <a href="mailto:bandreddysrisailohith@gmail.com" class="group relative px-8 py-4 bg-cyan-500/10 border border-cyan-500/50 rounded-full overflow-hidden hover:scale-105 transition-all w-full sm:w-auto">
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 translate-y-full group-hover:translate-y-0 transition-transform"></div>
+                    <span class="relative flex items-center justify-center space-x-2 text-cyan-400 font-medium">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span>bandreddysrisailohith@gmail.com</span>
+                    </span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/srisailohith/" target="_blank" class="ai-card px-8 py-4 rounded-full flex items-center justify-center space-x-2 hover:bg-slate-800 transition-colors w-full sm:w-auto">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-6 mb-16">
+                <a href="https://github.com/lohith261" target="_blank" class="text-slate-500 hover:text-white transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:bandreddysrisailohith@gmail.com" class="text-slate-500 hover:text-cyan-400 transition-colors">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/srisailohith/" target="_blank" class="text-slate-500 hover:text-blue-400 transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800/50 text-slate-600 text-sm">
+                <p>© 2024 Bandreddy Sri Sai Lohith • AI Engineer • Built with precision</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Typewriter Effect - AI Focused
+        const phrases = [
+            "AI Integration Specialist",
+            "LLM Orchestration Engineer",
+            "Vector Database Architect",
+            "Full-Stack AI Developer",
+            "Event-Driven AI Systems"
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter');
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 100;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Neural Network Canvas Animation
+        const canvas = document.getElementById('neural-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let nodes = [];
+        const nodeCount = 40;
+        const connectionDistance = 150;
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        class Node {
+            constructor() {
+                this.reset();
+            }
+            
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.fillStyle = 'rgba(0, 212, 255, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initNodes() {
+            nodes = [];
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push(new Node());
+            }
+        }
+
+        function drawConnections() {
+            for (let i = 0; i < nodes.length; i++) {
+                for (let j = i + 1; j < nodes.length; j++) {
+                    const dx = nodes[i].x - nodes[j].x;
+                    const dy = nodes[i].y - nodes[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < connectionDistance) {
+                        const opacity = (1 - distance / connectionDistance) * 0.15;
+                        ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[i].x, nodes[i].y);
+                        ctx.lineTo(nodes[j].x, nodes[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+            
+            drawConnections();
+            requestAnimationFrame(animate);
+        }
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Initialize
+        window.addEventListener('resize', () => {
+            resize();
+            initNodes();
+        });
+        
+        resize();
+        initNodes();
+        animate();
+        typeWriter();
+
+        // Interactive Glow Effect
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.body.style.background = `
+                radial-gradient(
+                    circle at ${x * 100}% ${y * 100}%, 
+                    rgba(0, 212, 255, 0.08) 0%, 
+                    rgba(124, 58, 237, 0.03) 40%, 
+                    #050508 100%
+                )
+            `;
+        });
+    </script>
+</body>
+</html>
