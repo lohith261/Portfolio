@@ -186,7 +186,12 @@ section{padding:96px 0 0}
 .book.step3 .done{display:block}
 .done h3{font-weight:500;font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.1;margin:12px 0}
 .done p{color:var(--ink-2);max-width:60ch}
-.done .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.done .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;align-items:center}
+.done .ctas .btn{cursor:pointer}
+.done .ctas button{text-transform:uppercase;letter-spacing:inherit}
+.done .after{gap:24px}
+.reqlabel{display:block;margin-top:24px;margin-bottom:6px}
+.reqtext{width:100%;max-width:640px;font:13px/1.5 var(--mono);color:var(--ink-2);background:var(--bg);border:1px solid var(--rule);padding:10px 12px;resize:vertical}
 
 /* contact */
 .contact{padding:96px 0 0}
@@ -326,7 +331,7 @@ footer .grid>*:last-child{text-align:right}
 <section id="work">
   <div class="grid sh">
     <h2 class="t m">Selected work</h2>
-    <p class="d">Client work is under NDA, so names stay private. The booking tool at the bottom of this page is a working demo of one of these builds. I can walk you through how any of them was built on a call.</p>
+    <p class="d">Most of these were built from scratch for the client, not assembled from templates. The booking tool at the bottom of this page is a working demo of one of them. Ask me on a call how any of them was built.</p>
     <span class="n m dim">13 entries</span>
   </div>
   <div class="idx">
@@ -335,21 +340,21 @@ footer .grid>*:last-child{text-align:right}
     <div class="group m dim">Apps &amp; products for clients</div>
     <div class="row">
       <span class="no m">01</span>
-      <span class="nm">Clothing store, web &amp; app<small>E-commerce</small></span>
+      <span class="nm">Clothing store, web &amp; app<span class="tag">Start here</span><small>E-commerce</small></span>
       <span class="ds">A complete online clothing store for a fashion client: a shopping website and a companion mobile app, designed and built end to end so customers can browse and buy on any device.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">02</span>
       <span class="nm">AI gym coach<small>Fitness</small></span>
       <span class="ds">A custom app the gym gives its members: workout, calorie and food-intake tracking, plus AI meal suggestions tailored to each member's goals and logs.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">03</span>
-      <span class="nm">Call booking tool<small>Scheduling</small></span>
+      <span class="nm">Call booking tool<span class="tag">Start here</span><small>Scheduling</small></span>
       <span class="ds">A self-hosted booking system so the client's customers can pick a free slot and book a call without the back-and-forth. The scheduler on this page is a demo of it.</span>
       <span class="yr m">Client</span>
       <span class="lk m"><a class="try" href="#book">Try the demo ↓</a></span>
@@ -358,54 +363,54 @@ footer .grid>*:last-child{text-align:right}
     <div class="group m dim">AI agents for clients</div>
     <div class="row">
       <span class="no m">04</span>
-      <span class="nm">Money tracker agent<small>Personal finance</small></span>
-      <span class="ds">Reads the bank SMS alerts and emails the client receives, and keeps a running record of every rupee in and out, with no manual entry.</span>
+      <span class="nm">Payment tracking agent<small>Finance</small></span>
+      <span class="ds">Reads incoming bank SMS alerts and payment emails and keeps a live ledger of every rupee in and out, with no manual entry. The same approach reconciles payments for a finance team.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">05</span>
-      <span class="nm">Saved-reels digest<small>Instagram</small></span>
-      <span class="ds">Reads every reel the client saved on Instagram the day before, summarises what's in them, and delivers a digest to their inbox each morning, fully automated.</span>
+      <span class="nm">Daily content briefing<small>Research &amp; social</small></span>
+      <span class="ds">Every morning, summarises the Instagram reels saved the day before and emails a briefing, fully automated. The same pattern turns any feed a team tracks, such as competitor posts or market news, into a daily digest.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">06</span>
       <span class="nm">Video cutter agent<small>Media</small></span>
-      <span class="ds">The client lists the timestamps they want, and the agent cuts the video into those clips on its own. Hours of editing reduced to one message.</span>
+      <span class="ds">Give the agent a list of timestamps and it cuts the video into those clips on its own. Turns long recordings, webinars and meetings into shareable clips without an editor.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">07</span>
-      <span class="nm">YouTube transcriber<small>Media</small></span>
-      <span class="ds">Paste a YouTube link and get a downloadable transcript of the audio, ready-made subtitle files, or the video itself.</span>
+      <span class="nm">Video transcription tool<small>Media</small></span>
+      <span class="ds">Paste a YouTube link and get a full transcript or ready-made subtitle files to download, with the source video available too. Makes video content searchable, quotable and accessible.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">08</span>
       <span class="nm">PDF toolkit for agents<small>Agent tooling</small></span>
-      <span class="ds">A PDF editor, merger and resizer that AI agents can call directly, so the client's agents handle document work end to end without a human stepping in.</span>
+      <span class="ds">A PDF editor, merger and resizer that AI agents can call directly. Invoices, contracts and reports get assembled and resized inside automated workflows, without a person stepping in.</span>
       <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
     <div class="row">
       <span class="no m">09</span>
-      <span class="nm">And 100+ more agents<small>Clients, employers, own work</small></span>
-      <span class="ds">The agents above are a sample. In total I've built and deployed more than 100: single agents, multi-agent pipelines, and n8n and Make.com workflows that plug AI into the tools a team already uses.</span>
+      <span class="nm">And 100+ more agents<small>Across every kind of work</small></span>
+      <span class="ds">The agents above are a sample. In total I've built and deployed more than 100 for clients, employers and my own products: single agents, multi-agent pipelines, and n8n and Make.com workflows that plug AI into the tools a team already uses.</span>
       <span class="yr m">Mixed</span>
-      <span class="lk m dim">Under NDA</span>
+      <span class="lk m dim"></span>
     </div>
 
     <div class="group m dim">Enterprise</div>
     <div class="row">
       <span class="no m">10</span>
-      <span class="nm">Payroll risk detection<small>ADP</small></span>
+      <span class="nm">Payroll risk detection<span class="tag">Start here</span><small>ADP</small></span>
       <span class="ds">AI that searches and reasons over <b>1M+ employee records</b> to flag time fraud, tax miscalculations and duplicate payments. Agents then trace each flag back to its root cause.</span>
       <span class="yr m">Employer</span>
-      <span class="lk m dim">Internal</span>
+      <span class="lk m dim"></span>
     </div>
 
     <div class="group m dim">My own products</div>
@@ -484,19 +489,19 @@ footer .grid>*:last-child{text-align:right}
   </div>
   <div class="terms">
     <div>
-      <span class="m dim">Pricing</span>
-      <h4>Quoted per project</h4>
-      <p>No rate card. After our first conversation you get a price and timeline for your project, and you agree to both before work starts.</p>
+      <span class="m dim">Pricing &amp; time</span>
+      <h4>Quoted per project, running costs included</h4>
+      <p>No rate card. After our first call you get a price, a timeline and what the system will cost each month to run, all agreed before work starts. You see a working prototype early, usually within the first week or two.</p>
+    </div>
+    <div>
+      <span class="m dim">Your data</span>
+      <h4>Your data stays yours</h4>
+      <p>I'll sign your NDA before you share anything. I use AI providers' business APIs, which don't train on your data, and I can run everything inside your own cloud account if you prefer. Access ends when the project does.</p>
     </div>
     <div>
       <span class="m dim">Capacity</span>
-      <h4>Real time for your project</h4>
-      <p>My current contract is light. For large builds, engineers I trust join the work, and you still have a single point of contact.</p>
-    </div>
-    <div>
-      <span class="m dim">After launch</span>
-      <h4>You're not locked in</h4>
-      <p>Full documentation and a clean handover. Ongoing support, retainers and AI workshops for your team are available if you want them.</p>
+      <h4>Real time, one point of contact</h4>
+      <p>My current contract is light, so I have real time for your project. For large builds, engineers I trust join under the same NDA, and I stay accountable for all of the work.</p>
     </div>
   </div>
 </section>
@@ -593,10 +598,13 @@ footer .grid>*:last-child{text-align:right}
       </form>
     </div>
     <div class="done" id="done">
-      <span class="m dim">One last step</span>
-      <h3>Send the email that just opened, and the slot is yours.</h3>
+      <span class="m dim">Last step</span>
+      <h3>Send your request, and the slot is yours.</h3>
       <p id="doneTxt"></p>
-      <div class="ctas m"><a class="btn" id="icsBtn" href="#" download="call-with-sri-sai-lohith.ics">Add to my calendar</a><a class="btn ghost" id="mailAgain" href="#">Email didn't open? Try again</a><button type="button" class="linkbtn" id="restart">Book another time</button></div>
+      <div class="ctas m"><a class="btn" id="gmailBtn" href="#" target="_blank" rel="noopener">Send with Gmail</a><a class="btn ghost" id="mailBtn" href="#">Send with my email app</a><button type="button" class="btn ghost" id="copyReq">Copy request</button></div>
+      <label class="m dim reqlabel" for="reqText">Or paste this into any email to bandreddysrisailohith@gmail.com</label>
+      <textarea id="reqText" class="reqtext" readonly rows="7"></textarea>
+      <div class="ctas m after"><a class="linkbtn" id="icsBtn" href="#" download="call-with-sri-sai-lohith.ics">Add to my calendar</a><button type="button" class="linkbtn" id="restart">Pick another time</button></div>
     </div>
   </div>
 
@@ -704,10 +712,18 @@ footer .grid>*:last-child{text-align:right}
     var end=new Date(slotDate.getTime()+30*60000);
     var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//srisailohith//booking//EN','BEGIN:VEVENT','UID:'+slotDate.getTime()+'-'+Math.random().toString(36).slice(2)+'@srisailohith','DTSTAMP:'+icsStamp(new Date()),'DTSTART:'+icsStamp(slotDate),'DTEND:'+icsStamp(end),'SUMMARY:Intro call with Sri Sai Lohith','DESCRIPTION:Requested slot. A Google Meet link will follow by email.','END:VEVENT','END:VCALENDAR'].join('\r\n');
     document.getElementById('icsBtn').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
-    document.getElementById('mailAgain').href=mailHref;
-    document.getElementById('doneTxt').textContent='Your request for '+when+' is written and ready in your email app. Once it arrives I\'ll confirm within a day and send a Google Meet link to '+em+'.';
+    var subj='Intro call request: '+when;
+    document.getElementById('mailBtn').href=mailHref;
+    document.getElementById('gmailBtn').href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(EMAIL)+'&su='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+    document.getElementById('reqText').value='To: '+EMAIL+'\nSubject: '+subj+'\n\n'+body;
+    document.getElementById('doneTxt').textContent='Your request for '+when+' is ready. Send it however suits you, and I\'ll confirm within a day with a Google Meet link to '+em+'.';
     box.classList.remove('step2');box.classList.add('step3');
-    window.location.href=mailHref;
+    document.getElementById('gmailBtn').focus();
+  });
+  document.getElementById('copyReq').addEventListener('click',function(){
+    var b=this,t=document.getElementById('reqText');
+    function ok(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy request';},1600);}
+    if(navigator.clipboard)navigator.clipboard.writeText(t.value).then(ok,function(){t.select();});else{t.select();}
   });
   document.getElementById('restart').addEventListener('click',function(){box.classList.remove('step3');picked=null;slotDate=null;renderCal();slotsEl.innerHTML='<p class="empty">Choose a highlighted day to see open times.</p>';document.getElementById('slotsHead').textContent='Pick a day';});
   renderCal();
