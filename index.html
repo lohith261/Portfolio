@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sri Sai Lohith, Freelance AI Engineer</title>
-<meta name="description" content="Sri Sai Lohith is a freelance AI engineer in Hyderabad. Enterprise RAG, 100+ AI agents in production, and workflow automation in n8n and Make.com.">
+<meta name="description" content="Freelance AI engineer in Hyderabad. I build AI agents, automations and apps that take repetitive work off your team. 100+ agents built, enterprise RAG at ADP, n8n and Make.com.">
 <meta property="og:title" content="Sri Sai Lohith, Freelance AI Engineer">
-<meta property="og:description" content="Enterprise RAG, 100+ AI agents, n8n and Make.com automation. Freelancing since 2023, full-time independent since November 2026.">
+<meta property="og:description" content="AI agents, automations and apps that take repetitive work off your team. Freelancing since 2023, full time since November 2026.">
 <meta property="og:image" content="myself.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -16,20 +16,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f2ec; --ink:#111110; --ink-2:#55534e; --ink-3:#8f8c85; --rule:#d9d6ce; --hi:#e8e4d9;
+  --bg:#f4f2ec; --ink:#111110; --ink-2:#55534e; --ink-3:#8f8c85; --rule:#d9d6ce; --hi:#e8e4d9; --card:#fbfaf6;
   --signal:#e5321b;
   --sans:"Geist",ui-sans-serif,system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,Menlo,monospace;
   --gx:24px;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#0f0f0e;--ink:#ecebe6;--ink-2:#a6a39c;--ink-3:#6c6a65;--rule:#2a2927;--hi:#1b1a19;--signal:#ff5a3c}
+  :root:not([data-theme="light"]){--bg:#0f0f0e;--ink:#ecebe6;--ink-2:#a6a39c;--ink-3:#6c6a65;--rule:#2a2927;--hi:#1b1a19;--card:#161615;--signal:#ff5a3c}
 }
-:root[data-theme="dark"]{--bg:#0f0f0e;--ink:#ecebe6;--ink-2:#a6a39c;--ink-3:#6c6a65;--rule:#2a2927;--hi:#1b1a19;--signal:#ff5a3c}
+:root[data-theme="dark"]{--bg:#0f0f0e;--ink:#ecebe6;--ink-2:#a6a39c;--ink-3:#6c6a65;--rule:#2a2927;--hi:#1b1a19;--card:#161615;--signal:#ff5a3c}
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:56px}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
 ::selection{background:var(--signal);color:#fff}
 .m{font-family:var(--mono);font-size:12px;line-height:1.55;letter-spacing:.01em;text-transform:uppercase}
 .dim{color:var(--ink-3)}
@@ -37,22 +38,30 @@ a{color:inherit;text-decoration:none}
 .u:hover{color:var(--signal)}
 .page{padding:0 var(--gx)}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gx)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
 
 /* top bar */
 .top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--rule);padding:12px 0}
 .top .grid>*{align-self:center}
-.c1{grid-column:1/4}.c2{grid-column:4/6}.c3{grid-column:6/9}.c4{grid-column:9/13;text-align:right;white-space:nowrap}
-.live::before{content:"";display:inline-block;width:7px;height:7px;background:var(--signal);margin-right:8px;vertical-align:1px}
+.c1{grid-column:1/4}.c2{grid-column:4/6}.c3{grid-column:6/8}.c4{grid-column:8/13;text-align:right;white-space:nowrap}
 .top nav a{margin-left:14px}
 .top nav a:hover{color:var(--signal)}
+.top nav a.cta{background:var(--ink);color:var(--bg);padding:5px 10px}
+.top nav a.cta:hover{background:var(--signal);color:#fff}
+.live::before{content:"";display:inline-block;width:7px;height:7px;background:var(--signal);margin-right:8px;vertical-align:1px}
 
 /* hero */
 .hero{padding:88px 0 40px}
-.hero h1{grid-column:1/11;font-weight:500;font-size:clamp(34px,5.2vw,76px);line-height:1.02;letter-spacing:-.035em}
+.hero h1{grid-column:1/11;font-weight:500;font-size:clamp(36px,5.6vw,82px);line-height:1.02;letter-spacing:-.035em}
 .hero h1 .dim{color:var(--ink-3)}
 .hero-meta{margin-top:72px;padding-top:14px;border-top:1px solid var(--ink)}
 .hero-meta .lead{grid-column:1/6;font-size:17px;line-height:1.45;color:var(--ink-2)}
 .hero-meta .lead b{color:var(--ink);font-weight:500}
+.hero-meta .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:12px 18px;border:1px solid var(--ink)}
+.btn:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{color:#fff}
 .hero-meta figure{grid-column:10/13}
 .hero-meta img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 20%;display:block;filter:grayscale(1) contrast(1.05)}
 .hero-meta figcaption{margin-top:8px}
@@ -64,13 +73,13 @@ a{color:inherit;text-decoration:none}
 section{padding:96px 0 0}
 .sh{border-top:1px solid var(--ink);padding-top:12px;margin-bottom:36px}
 .sh .t{grid-column:1/4}
-.sh .d{grid-column:4/10;color:var(--ink-2);font-size:15px;max-width:52ch}
+.sh .d{grid-column:4/10;color:var(--ink-2);font-size:15px;max-width:54ch}
 .sh .n{grid-column:10/13;text-align:right}
 
 /* notice */
 .notice{margin-top:56px;background:var(--ink);color:var(--bg);padding:20px var(--gx);margin-left:calc(var(--gx)*-1);margin-right:calc(var(--gx)*-1)}
 .notice .grid>*{align-self:baseline}
-.notice p{grid-column:4/11;font-size:clamp(18px,2vw,24px);line-height:1.3;letter-spacing:-.015em}
+.notice p{grid-column:4/11;font-size:clamp(17px,1.8vw,22px);line-height:1.35;letter-spacing:-.012em}
 .notice .m{grid-column:1/4;color:color-mix(in srgb,var(--bg) 60%,transparent)}
 .notice a{grid-column:11/13;text-align:right}
 
@@ -87,25 +96,36 @@ section{padding:96px 0 0}
 .row .lk{grid-column:11/13;text-align:right;white-space:nowrap}
 .row .lk a{margin-left:12px}
 .row .lk a:hover{color:var(--signal)}
+.row .lk a.try{color:var(--signal)}
 .thead{border-bottom:1px solid var(--rule);padding:0 0 8px}
 .thead:hover{background:none}
+.group{padding:22px 0 8px;border-bottom:1px solid var(--rule)}
+.group:first-child{padding-top:0}
 
-/* capabilities */
+/* services */
 .caps{display:grid;grid-template-columns:repeat(4,1fr);column-gap:var(--gx);row-gap:40px}
-.cap h3{font-weight:500;font-size:15px;padding-bottom:10px;border-bottom:1px solid var(--rule);margin-bottom:12px;display:flex;justify-content:space-between;gap:8px}
-.cap ul{list-style:none;color:var(--ink-2)}
-.cap li{padding:3px 0}
-.cap p{color:var(--ink-2);font-size:14px;margin-bottom:10px}
+.cap .pain{font-size:13.5px;color:var(--ink-3);min-height:3em}
+.cap h3{font-weight:500;font-size:20px;letter-spacing:-.015em;line-height:1.2;padding:10px 0 12px;border-bottom:1px solid var(--rule);margin-bottom:12px}
+.cap p{color:var(--ink-2);margin-bottom:14px}
+.cap .stack{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);line-height:1.7;text-transform:uppercase}
 
-/* engagements */
+/* advice / two-up */
 .eng{display:grid;grid-template-columns:repeat(3,1fr);column-gap:var(--gx)}
 .eng>div{border-left:1px solid var(--rule);padding:0 0 0 16px}
-.eng h3{font-weight:500;font-size:22px;letter-spacing:-.02em;margin:10px 0 10px}
-.eng p{color:var(--ink-2);max-width:34ch}
-.eng ul{list-style:none;margin-top:16px;color:var(--ink-2)}
-.eng li{padding:5px 0;border-top:1px dashed var(--rule)}
-.advice p{max-width:40ch}
-.advice .quote h3{font-size:26px;line-height:1.15}
+.eng h3{font-weight:500;font-size:22px;letter-spacing:-.02em;margin:10px 0 10px;line-height:1.15}
+.eng p{color:var(--ink-2);max-width:40ch}
+.advice .quote h3{font-size:26px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);column-gap:var(--gx);border-top:1px solid var(--rule)}
+.step{padding-top:14px}
+.step .k{font-family:var(--mono);font-size:12px;color:var(--signal)}
+.step h3{font-weight:500;font-size:18px;letter-spacing:-.01em;margin:10px 0 8px;line-height:1.2}
+.step p{color:var(--ink-2);font-size:14.5px}
+.terms{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);column-gap:var(--gx);row-gap:24px}
+.terms>div{border-top:1px solid var(--ink);padding-top:12px}
+.terms h4{font-weight:500;font-size:16px;margin:8px 0 6px}
+.terms p{color:var(--ink-2);font-size:14.5px;max-width:40ch}
 
 /* cv */
 .cv .row .nm{grid-column:3/6}
@@ -115,37 +135,93 @@ section{padding:96px 0 0}
 .cv ul{list-style:none;margin-top:8px}
 .cv li{padding:2px 0 2px 14px;position:relative}
 .cv li::before{content:"–";position:absolute;left:0;color:var(--ink-3)}
-.tag{display:inline-block;font-family:var(--mono);font-size:11px;text-transform:uppercase;padding:1px 6px;border:1px solid currentColor;margin-left:8px;vertical-align:2px;color:var(--signal)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;text-transform:uppercase;padding:1px 6px;border:1px solid currentColor;margin-left:8px;vertical-align:2px;color:var(--signal);font-weight:400;letter-spacing:0}
 .past{color:var(--ink-3)}
 
+/* booking */
+.book{border:1px solid var(--ink);background:var(--card);display:grid;grid-template-columns:3fr 4fr 3fr;min-height:430px}
+.book>div{padding:22px}
+.book>div+div{border-left:1px solid var(--rule)}
+.bk-info h3{font-weight:500;font-size:24px;letter-spacing:-.02em;line-height:1.15;margin:12px 0 10px}
+.bk-info p{color:var(--ink-2);font-size:14.5px}
+.bk-info dl{margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.bk-info dt{color:var(--ink-3)}
+.bk-info .note{margin-top:24px;padding-top:12px;border-top:1px dashed var(--rule);font-size:13px;color:var(--ink-3)}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cal-head b{font-weight:500;font-size:16px}
+.cal-nav button{background:none;border:1px solid var(--rule);width:32px;height:32px;cursor:pointer;margin-left:4px}
+.cal-nav button:hover:not(:disabled){border-color:var(--ink)}
+.cal-nav button:disabled{opacity:.35;cursor:default}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .dow{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-align:center;padding:4px 0;text-transform:uppercase}
+.cal button{aspect-ratio:1;border:1px solid transparent;background:none;cursor:pointer;font-size:14px;font-variant-numeric:tabular-nums;position:relative}
+.cal button.open{background:var(--hi);font-weight:500}
+.cal button.open:hover{border-color:var(--ink)}
+.cal button.sel{background:var(--ink);color:var(--bg)}
+.cal button:disabled{color:var(--ink-3);opacity:.45;cursor:default;background:none}
+.cal button.today::after{content:"";position:absolute;left:50%;bottom:5px;width:4px;height:4px;margin-left:-2px;background:var(--signal)}
+.tz{margin-top:14px;font-size:12.5px;color:var(--ink-3)}
+.slots-h{margin-bottom:12px}
+.slots{display:grid;gap:6px;max-height:330px;overflow:auto;padding-right:4px}
+.slots button{border:1px solid var(--rule);background:none;padding:10px 12px;text-align:left;cursor:pointer;display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.slots button:hover{border-color:var(--ink)}
+.slots button small{color:var(--ink-3);font-family:var(--mono);font-size:11px}
+.empty{color:var(--ink-3);font-size:14px}
+.bk-form{display:none;grid-column:2/4;border-left:1px solid var(--rule)}
+.book.step2 .bk-cal,.book.step2 .bk-slots{display:none}
+.book.step2 .bk-form{display:block}
+.bk-form .picked{display:flex;justify-content:space-between;gap:12px;align-items:baseline;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--rule)}
+.bk-form .picked b{font-weight:500;font-size:18px}
+.linkbtn{background:none;border:none;cursor:pointer;border-bottom:1px solid currentColor;padding:0}
+.linkbtn:hover{color:var(--signal)}
+.fld{display:grid;gap:6px;margin-bottom:14px}
+.fld label{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;color:var(--ink-3)}
+.fld input,.fld textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--rule);padding:10px 12px;border-radius:0;width:100%}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:var(--ink)}
+.fld textarea{min-height:96px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.err{color:var(--signal);font-size:13px;min-height:1.2em;margin-bottom:8px}
+.done{display:none;grid-column:1/4;padding:40px 22px!important;border-left:none!important}
+.book.step3>div{display:none}
+.book.step3 .done{display:block}
+.done h3{font-weight:500;font-size:clamp(26px,3vw,40px);letter-spacing:-.03em;line-height:1.1;margin:12px 0}
+.done p{color:var(--ink-2);max-width:60ch}
+.done .ctas{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+
 /* contact */
-.contact{padding:120px 0 0}
-.contact h2{grid-column:1/13;font-weight:500;font-size:clamp(40px,8.4vw,128px);line-height:.95;letter-spacing:-.045em}
-.contact h2 a:hover{color:var(--signal)}
+.contact{padding:96px 0 0}
 .contact .cols{margin-top:40px;padding-top:14px;border-top:1px solid var(--ink)}
 .contact .cols>div{grid-column:span 3}
-.contact .cols p{color:var(--ink-2)}
-.copy{background:none;border:none;font:inherit;color:inherit;cursor:pointer;padding:0}
+.copy{background:none;border:none;cursor:pointer;padding:0}
 .copy:hover{color:var(--signal)}
 
 footer{margin-top:120px;border-top:1px solid var(--rule);padding:14px 0 18px}
 footer .grid>*:last-child{text-align:right}
-.tbtn{background:none;border:none;font:inherit;color:inherit;cursor:pointer;text-transform:uppercase}
+.tbtn{background:none;border:none;cursor:pointer;text-transform:uppercase;font-family:var(--mono);font-size:12px}
 .tbtn:hover{color:var(--signal)}
 
 /* responsive */
+@media (max-width:1100px){
+  .steps{grid-template-columns:repeat(3,1fr);row-gap:28px}
+  .book{grid-template-columns:1fr 1fr}
+  .bk-info{grid-column:1/3;border-bottom:1px solid var(--rule)}
+  .book>div+div{border-left:none}
+  .bk-slots{border-left:1px solid var(--rule)!important}
+  .bk-form{grid-column:1/3;border-left:none}
+  .done{grid-column:1/3}
+}
 @media (max-width:1000px){
   .hero h1{grid-column:1/13}
   .hero-meta .lead{grid-column:1/8}
   .facts{grid-column:8/13}
   .hero-meta figure{grid-column:1/5;grid-row:2;margin-top:40px}
   .caps{grid-template-columns:repeat(2,1fr)}
-  .c3{display:none}.c2{grid-column:4/8}.c4{grid-column:8/13}
+  .c3,.c2{display:none}.c4{grid-column:4/13}
 }
 @media (max-width:720px){
   :root{--gx:16px}
-  .c2,.c3{display:none}.c1{grid-column:1/8}.c4{grid-column:8/13}
-  .top nav a:not(:last-child){display:none}
+  .c1{grid-column:1/6}.c4{grid-column:6/13}
+  .top nav a:not(.cta){display:none}
   .hero{padding:48px 0 24px}
   .hero-meta{margin-top:40px}
   .hero-meta .lead,.facts{grid-column:1/13}
@@ -157,17 +233,20 @@ footer .grid>*:last-child{text-align:right}
   .notice p{margin:8px 0 12px}
   .row{row-gap:6px}
   .row .no{grid-column:1/3}
-  .row .nm{grid-column:3/13}
-  .row .ds{grid-column:3/13}
+  .row .nm,.row .ds{grid-column:3/13}
   .row .yr{grid-column:3/7}
   .row .lk{grid-column:7/13}
   .thead{display:none}
-  .cv .row .no{grid-column:1/13}
-  .cv .row .nm,.cv .row .ds{grid-column:1/13}
-  .cv .row .lk{grid-column:1/13;text-align:left}
-  .caps,.eng{grid-template-columns:1fr}
+  .cv .row .no,.cv .row .nm,.cv .row .ds{grid-column:1/13}
+  .cv .row .lk{display:none}
+  .caps,.eng,.terms{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;row-gap:20px}
   .eng>div{border-left:none;border-top:1px solid var(--rule);padding:14px 0 28px}
-  .contact h2{font-size:8.6vw;letter-spacing:-.04em}
+  .book{grid-template-columns:1fr}
+  .book>div{padding:18px 16px}
+  .bk-info,.bk-form,.done{grid-column:1/2}
+  .bk-slots{border-left:none!important;border-top:1px solid var(--rule)}
+  .two{grid-template-columns:1fr}
   .contact .cols>div{grid-column:span 6;margin-bottom:20px}
   footer .grid>*{grid-column:1/13!important;text-align:left!important}
 }
@@ -181,128 +260,41 @@ footer .grid>*:last-child{text-align:right}
     <a class="c1" href="#">Sri Sai Lohith</a>
     <span class="c2 dim">Freelance AI engineer</span>
     <span class="c3"><span class="dim">Hyderabad</span> <span id="clock">IST</span></span>
-    <nav class="c4"><a href="#work">Work</a><a href="#advice">Advice</a><a href="#services">Services</a><a href="#cv">CV</a><a href="#contact" class="live">Available</a></nav>
+    <nav class="c4"><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#cv">CV</a><a href="#book" class="cta">Book a call</a></nav>
   </div>
 </header>
 
 <main>
 <div class="hero">
   <div class="grid">
-    <h1>I build AI systems that companies run every day: retrieval over messy enterprise data, agents that finish real work, and automations that remove the busywork. <span class="dim">Freelancing since 2023, full-time since November 2026.</span></h1>
+    <h1>I build AI agents, automations and apps that take repetitive work off your team. <span class="dim">Freelancing since 2023. Full time since November 2026.</span></h1>
   </div>
 
   <div class="grid hero-meta">
-    <p class="lead">I'm <b>Bandreddy Sri Sai Lohith</b>. I spent three years at <b>ADP</b> building LLM systems over payroll data for more than a million employees. The whole time, I was also building for my own freelance clients. In November I left ADP to do that full time. I take on a small number of projects at a time and build them myself, end to end.</p>
+    <div class="lead">
+      <p>I'm <b>Bandreddy Sri Sai Lohith</b>. For three years at <b>ADP</b> I built AI systems that ran across payroll data for more than a million employees. The whole time, I was also building for my own freelance clients. In November I left ADP to do that full time.</p>
+      <div class="ctas m"><a class="btn" href="#book">Book a free 30-min call</a><a class="btn ghost" href="#work">See the work</a></div>
+    </div>
     <div class="facts">
       <div class="fact"><b>100+</b><span>AI agents built and deployed</span></div>
-      <div class="fact"><b>1M+</b><span>employee records behind the enterprise RAG I built at ADP</span></div>
-      <div class="fact"><b>3 yrs</b><span>AI and backend engineering at ADP</span></div>
-      <div class="fact"><b>5</b><span>custom client builds delivered solo</span></div>
+      <div class="fact"><b>8</b><span>custom builds delivered for freelance clients</span></div>
+      <div class="fact"><b>1M+</b><span>employee records behind the enterprise AI I built at ADP</span></div>
+      <div class="fact"><b>&lt;24h</b><span>reply time on every enquiry</span></div>
     </div>
     <figure>
       <img src="myself.png" alt="Bandreddy Sri Sai Lohith">
-      <figcaption class="m dim">Fig. 1. The person who will write your code</figcaption>
+      <figcaption class="m dim">Fig. 1. The person who will build it</figcaption>
     </figure>
   </div>
 
   <div class="notice">
     <div class="grid">
-      <span class="m">Status / Nov 2026</span>
-      <p>Currently on a contract project with Kanerika, and open to one or two more engagements alongside it.</p>
-      <a href="#contact" class="m u">Start a conversation</a>
+      <span class="m">Availability / Nov 2026</span>
+      <p>My Kanerika contract takes only a small part of my week, so I have real time for your project. For larger builds I bring in engineers I trust, and you still deal only with me.</p>
+      <a href="#book" class="m u">Book a call</a>
     </div>
   </div>
 </div>
-
-<!-- Work -->
-<section id="work">
-  <div class="grid sh">
-    <h2 class="t m">Selected work</h2>
-    <p class="d">Client builds first, then enterprise work, then products I run myself. Client work is under NDA, so names stay private. I can walk you through how any of it was built on a call.</p>
-    <span class="n m dim">11 entries</span>
-  </div>
-  <div class="idx">
-    <div class="row thead m dim"><span class="no">No.</span><span class="nm" style="font-size:12px;font-weight:400">Project</span><span class="ds">What it does</span><span class="yr">For</span><span class="lk">Links</span></div>
-
-    <div class="row">
-      <span class="no m">01</span>
-      <span class="nm">Clothing store, web &amp; app<small>E-commerce, client build</small></span>
-      <span class="ds">A complete online clothing store for a fashion client: a shopping website and a companion mobile app, designed and built end to end so customers can browse and buy on any device.</span>
-      <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
-    </div>
-    <div class="row">
-      <span class="no m">02</span>
-      <span class="nm">AI gym coach<small>Fitness, client build</small></span>
-      <span class="ds">A custom app the gym gives its members: workout, calorie and food-intake tracking, plus AI meal suggestions tailored to each member's goals and logs.</span>
-      <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
-    </div>
-    <div class="row">
-      <span class="no m">03</span>
-      <span class="nm">Saved-reels digest<small>Instagram, client build</small></span>
-      <span class="ds">Reads every reel the client saved on Instagram the day before, summarises what's in them, and delivers a digest to their inbox each morning, fully automated.</span>
-      <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
-    </div>
-    <div class="row">
-      <span class="no m">04</span>
-      <span class="nm">PDF toolkit for agents<small>Agent tooling, client build</small></span>
-      <span class="ds">A PDF editor, merger and resizer that AI agents can call directly, so the client's agents handle document work end to end without a human stepping in.</span>
-      <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
-    </div>
-    <div class="row">
-      <span class="no m">05</span>
-      <span class="nm">YouTube transcriber<small>Media, client build</small></span>
-      <span class="ds">A custom transcription tool that turns YouTube videos into ready-to-use transcripts, built around the client's own workflow.</span>
-      <span class="yr m">Client</span>
-      <span class="lk m dim">Under NDA</span>
-    </div>
-    <div class="row">
-      <span class="no m">06</span>
-      <span class="nm">Payroll risk RAG<small>ADP, enterprise</small></span>
-      <span class="ds">Retrieval and LLM reasoning over <b>1M+ employee records</b> to flag time fraud, tax miscalculations and duplicate payments. LangChain agents then trace each flag back to its root cause.</span>
-      <span class="yr m">Employer</span>
-      <span class="lk m dim">Internal</span>
-    </div>
-    <div class="row">
-      <span class="no m">07</span>
-      <span class="nm">Agents &amp; automations<small>Across all of the above</small></span>
-      <span class="ds"><b>100+ AI agents</b> built and deployed: single agents, multi-agent pipelines, and n8n and Make.com workflows that connect LLMs to the tools a team already uses.</span>
-      <span class="yr m">Mixed</span>
-      <span class="lk m dim">Under NDA</span>
-    </div>
-    <div class="row">
-      <span class="no m">08</span>
-      <span class="nm">FileVault<small>Own product</small></span>
-      <span class="ds">Storage for AI agents: files, memory, semantic search and agent-to-agent sharing behind one API, plus an MCP server for Claude Desktop, Cursor and Cline.</span>
-      <span class="yr m">Own</span>
-      <span class="lk m"><a href="https://filevault.host" target="_blank" rel="noopener">Site ↗</a><a href="https://github.com/lohith261/filevault" target="_blank" rel="noopener">Code ↗</a></span>
-    </div>
-    <div class="row">
-      <span class="no m">09</span>
-      <span class="nm">Keen<small>Own product</small></span>
-      <span class="ds">Due diligence for private equity. Three agents run in sequence over SEC filings, Crunchbase, HubSpot and Salesforce data, and the report exports to PDF, Excel or Sheets.</span>
-      <span class="yr m">Own</span>
-      <span class="lk m"><a href="https://keen-sigma.vercel.app" target="_blank" rel="noopener">Site ↗</a><a href="https://github.com/lohith261/keen" target="_blank" rel="noopener">Code ↗</a></span>
-    </div>
-    <div class="row">
-      <span class="no m">10</span>
-      <span class="nm">Job Tailor<small>Own product</small></span>
-      <span class="ds">Job search for India. Pulls listings from Naukri, Indeed India and Internshala, scores each one against your profile, tailors your resume and tracks applications on a board.</span>
-      <span class="yr m">Own</span>
-      <span class="lk m"><a href="https://jobtailor.in" target="_blank" rel="noopener">Site ↗</a><a href="https://github.com/lohith261/Job-Tailor" target="_blank" rel="noopener">Code ↗</a></span>
-    </div>
-    <div class="row">
-      <span class="no m">11</span>
-      <span class="nm">Content Assistant<small>Own product</small></span>
-      <span class="ds">Takes text, a URL, an image or a document and returns a summary, action items and next steps. Runs on Gemini 2.5 Flash with a Node scraper behind it.</span>
-      <span class="yr m">Own</span>
-      <span class="lk m"><a href="https://ai-content-assistent.vercel.app" target="_blank" rel="noopener">Site ↗</a></span>
-    </div>
-  </div>
-</section>
 
 <!-- Advice -->
 <section id="advice">
@@ -330,62 +322,181 @@ footer .grid>*:last-child{text-align:right}
   </div>
 </section>
 
-<!-- Services -->
-<section id="services">
+<!-- Work -->
+<section id="work">
   <div class="grid sh">
-    <h2 class="t m">What I do</h2>
-    <p class="d">Most of my work falls into four areas. A typical project touches two or three of them.</p>
-    <span class="n m dim">04 areas</span>
+    <h2 class="t m">Selected work</h2>
+    <p class="d">Client work is under NDA, so names stay private. The booking tool at the bottom of this page is a working demo of one of these builds. I can walk you through how any of them was built on a call.</p>
+    <span class="n m dim">13 entries</span>
   </div>
-  <div class="caps">
-    <div class="cap">
-      <h3>Retrieval (RAG) <span class="m dim">A</span></h3>
-      <p>Search and Q&amp;A over your documents and databases, with answers you can trace back to the source.</p>
-      <ul><li>Enterprise document &amp; data RAG</li><li>Chunking, embeddings, re-ranking</li><li>pgvector and vector stores</li><li>Access control on retrieved data</li></ul>
+  <div class="idx">
+    <div class="row thead m dim"><span class="no">No.</span><span class="nm" style="font-size:12px;font-weight:400">Project</span><span class="ds">What it does</span><span class="yr">For</span><span class="lk">Links</span></div>
+
+    <div class="group m dim">Apps &amp; products for clients</div>
+    <div class="row">
+      <span class="no m">01</span>
+      <span class="nm">Clothing store, web &amp; app<small>E-commerce</small></span>
+      <span class="ds">A complete online clothing store for a fashion client: a shopping website and a companion mobile app, designed and built end to end so customers can browse and buy on any device.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
     </div>
-    <div class="cap">
-      <h3>Agents <span class="m dim">B</span></h3>
-      <p>Agents that use your tools and APIs to finish a task, not just answer a question.</p>
-      <ul><li>Single and multi-agent systems</li><li>LangChain, tool calling</li><li>MCP servers &amp; integrations</li><li>Claude, Gemini, Bedrock, OpenRouter</li></ul>
+    <div class="row">
+      <span class="no m">02</span>
+      <span class="nm">AI gym coach<small>Fitness</small></span>
+      <span class="ds">A custom app the gym gives its members: workout, calorie and food-intake tracking, plus AI meal suggestions tailored to each member's goals and logs.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
     </div>
-    <div class="cap">
-      <h3>Automation <span class="m dim">C</span></h3>
-      <p>Workflows that move data between your apps and put an LLM in the steps that need judgment.</p>
-      <ul><li>n8n</li><li>Make.com</li><li>Webhooks &amp; custom API glue</li><li>Scraping &amp; data pipelines</li></ul>
+    <div class="row">
+      <span class="no m">03</span>
+      <span class="nm">Call booking tool<small>Scheduling</small></span>
+      <span class="ds">A self-hosted booking system so the client's customers can pick a free slot and book a call without the back-and-forth. The scheduler on this page is a demo of it.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m"><a class="try" href="#book">Try the demo ↓</a></span>
     </div>
-    <div class="cap">
-      <h3>The product around it <span class="m dim">D</span></h3>
-      <p>The app, the API and the infrastructure, so the AI part has somewhere to live.</p>
-      <ul><li>Next.js, React, TypeScript</li><li>Node, Python, Java Spring Boot</li><li>AWS Lambda, Step Functions</li><li>Postgres, Supabase, Redis</li></ul>
+
+    <div class="group m dim">AI agents for clients</div>
+    <div class="row">
+      <span class="no m">04</span>
+      <span class="nm">Money tracker agent<small>Personal finance</small></span>
+      <span class="ds">Reads the bank SMS alerts and emails the client receives, and keeps a running record of every rupee in and out, with no manual entry.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
+    </div>
+    <div class="row">
+      <span class="no m">05</span>
+      <span class="nm">Saved-reels digest<small>Instagram</small></span>
+      <span class="ds">Reads every reel the client saved on Instagram the day before, summarises what's in them, and delivers a digest to their inbox each morning, fully automated.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
+    </div>
+    <div class="row">
+      <span class="no m">06</span>
+      <span class="nm">Video cutter agent<small>Media</small></span>
+      <span class="ds">The client lists the timestamps they want, and the agent cuts the video into those clips on its own. Hours of editing reduced to one message.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
+    </div>
+    <div class="row">
+      <span class="no m">07</span>
+      <span class="nm">YouTube transcriber<small>Media</small></span>
+      <span class="ds">Paste a YouTube link and get a downloadable transcript of the audio, ready-made subtitle files, or the video itself.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
+    </div>
+    <div class="row">
+      <span class="no m">08</span>
+      <span class="nm">PDF toolkit for agents<small>Agent tooling</small></span>
+      <span class="ds">A PDF editor, merger and resizer that AI agents can call directly, so the client's agents handle document work end to end without a human stepping in.</span>
+      <span class="yr m">Client</span>
+      <span class="lk m dim">Under NDA</span>
+    </div>
+    <div class="row">
+      <span class="no m">09</span>
+      <span class="nm">And 100+ more agents<small>Clients, employers, own work</small></span>
+      <span class="ds">The agents above are a sample. In total I've built and deployed more than 100: single agents, multi-agent pipelines, and n8n and Make.com workflows that plug AI into the tools a team already uses.</span>
+      <span class="yr m">Mixed</span>
+      <span class="lk m dim">Under NDA</span>
+    </div>
+
+    <div class="group m dim">Enterprise</div>
+    <div class="row">
+      <span class="no m">10</span>
+      <span class="nm">Payroll risk detection<small>ADP</small></span>
+      <span class="ds">AI that searches and reasons over <b>1M+ employee records</b> to flag time fraud, tax miscalculations and duplicate payments. Agents then trace each flag back to its root cause.</span>
+      <span class="yr m">Employer</span>
+      <span class="lk m dim">Internal</span>
+    </div>
+
+    <div class="group m dim">My own products</div>
+    <div class="row">
+      <span class="no m">11</span>
+      <span class="nm">FileVault<small>Own product</small></span>
+      <span class="ds">Storage built for AI agents: files, memory, search and agent-to-agent sharing behind one API. Works with Claude Desktop, Cursor and Cline.</span>
+      <span class="yr m">Own</span>
+      <span class="lk m"><a href="https://filevault.host" target="_blank" rel="noopener">Site ↗</a><a href="https://github.com/lohith261/filevault" target="_blank" rel="noopener">Code ↗</a></span>
+    </div>
+    <div class="row">
+      <span class="no m">12</span>
+      <span class="nm">Keen<small>Own product</small></span>
+      <span class="ds">Due diligence for private equity. Three agents work through SEC filings, Crunchbase, HubSpot and Salesforce data and produce a report in PDF, Excel or Sheets.</span>
+      <span class="yr m">Own</span>
+      <span class="lk m"><a href="https://keen-sigma.vercel.app" target="_blank" rel="noopener">Site ↗</a><a href="https://github.com/lohith261/keen" target="_blank" rel="noopener">Code ↗</a></span>
+    </div>
+    <div class="row">
+      <span class="no m">13</span>
+      <span class="nm">Also live<small>Own products</small></span>
+      <span class="ds">Job Tailor, an AI job-search assistant for India, and Content Assistant, which turns any text, link or document into a summary and next steps.</span>
+      <span class="yr m">Own</span>
+      <span class="lk m"><a href="https://jobtailor.in" target="_blank" rel="noopener">Job Tailor ↗</a><a href="https://ai-content-assistent.vercel.app" target="_blank" rel="noopener">Content ↗</a></span>
     </div>
   </div>
 </section>
 
-<!-- Engagements -->
-<section id="engage">
+<!-- Services -->
+<section id="services">
   <div class="grid sh">
-    <h2 class="t m">Working together</h2>
-    <p class="d">Pick whichever fits. Every engagement starts with a free 30-minute call, and you get a written scope before any money changes hands.</p>
-    <span class="n m dim">03 options</span>
+    <h2 class="t m">What I can do for you</h2>
+    <p class="d">Start from the problem. The technology is in the small print, for whoever on your team wants it.</p>
+    <span class="n m dim">04 areas</span>
   </div>
-  <div class="eng">
+  <div class="caps">
+    <div class="cap">
+      <p class="pain">"My team does the same task fifty times a week."</p>
+      <h3>AI agents that do the task</h3>
+      <p>Agents that read, decide and act inside your tools: sorting email, updating records, producing reports, chasing follow-ups.</p>
+      <p class="stack">LangChain · tool calling · MCP · Claude · Gemini · AWS Bedrock</p>
+    </div>
+    <div class="cap">
+      <p class="pain">"Our tools don't talk to each other."</p>
+      <h3>Automations between your apps</h3>
+      <p>Data moves between your apps on its own, with AI handling the steps that need judgment.</p>
+      <p class="stack">n8n · Make.com · webhooks · custom APIs · scraping</p>
+    </div>
+    <div class="cap">
+      <p class="pain">"Nobody can find anything in our documents."</p>
+      <h3>AI search over your own data</h3>
+      <p>Ask questions in plain language and get answers from your documents and databases, each with a link to its source.</p>
+      <p class="stack">RAG · embeddings · pgvector · re-ranking · access control</p>
+    </div>
+    <div class="cap">
+      <p class="pain">"We need an actual product, not a demo."</p>
+      <h3>Web and mobile apps</h3>
+      <p>Stores, member apps, dashboards and internal tools, built to production standard and handed over to you.</p>
+      <p class="stack">Next.js · React · Node · Python · Spring Boot · AWS · Postgres</p>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process">
+  <div class="grid sh">
+    <h2 class="t m">How I work</h2>
+    <p class="d">Fast, but never guessing. You see something working early, and you own all of it at the end.</p>
+    <span class="n m dim">05 steps</span>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="k">01</span><h3>Questions first</h3><p>Before anything else, I ask until I understand the problem, the people involved and what success looks like.</p></div>
+    <div class="step"><span class="k">02</span><h3>A clear timeline</h3><p>You get a timeline based on what you've asked for, agreed before any work starts.</p></div>
+    <div class="step"><span class="k">03</span><h3>Prototype &amp; demo</h3><p>I build a working prototype or MVP quickly and demo it to you, so feedback comes from using it, not imagining it.</p></div>
+    <div class="step"><span class="k">04</span><h3>Refine or rebuild</h3><p>Based on your response, I rework it, revamp it, or finish it. No sunk-cost thinking.</p></div>
+    <div class="step"><span class="k">05</span><h3>Document &amp; hand over</h3><p>Everything is documented, and ownership moves to you smoothly: code, accounts and know-how.</p></div>
+  </div>
+  <div class="terms">
     <div>
-      <span class="m dim">Option 1</span>
-      <h3>Fixed-scope build</h3>
-      <p>A defined thing, built and delivered: an agent, a RAG system, an automation, or an MVP.</p>
-      <ul><li>Written scope &amp; fixed price</li><li>Weekly demos</li><li>Code, docs and handover</li></ul>
+      <span class="m dim">Pricing</span>
+      <h4>Quoted per project</h4>
+      <p>No rate card. After our first conversation you get a price and timeline for your project, and you agree to both before work starts.</p>
     </div>
     <div>
-      <span class="m dim">Option 2</span>
-      <h3>Monthly retainer</h3>
-      <p>A set number of days each month to keep building, maintaining and improving your AI systems.</p>
-      <ul><li>Reserved capacity</li><li>Shared Slack or Teams channel</li><li>Cancel any month</li></ul>
+      <span class="m dim">Capacity</span>
+      <h4>Real time for your project</h4>
+      <p>My current contract is light. For large builds, engineers I trust join the work, and you still have a single point of contact.</p>
     </div>
     <div>
-      <span class="m dim">Option 3</span>
-      <h3>Advisory</h3>
-      <p>For teams deciding what to do with AI: workshops, architecture reviews and an honest second opinion before you spend.</p>
-      <ul><li>Hourly or per session</li><li>AI workshops for teams &amp; leadership</li><li>Build-or-don't-build reviews</li></ul>
+      <span class="m dim">After launch</span>
+      <h4>You're not locked in</h4>
+      <p>Full documentation and a clean handover. Ongoing support, retainers and AI workshops for your team are available if you want them.</p>
     </div>
   </div>
 </section>
@@ -401,7 +512,7 @@ footer .grid>*:last-child{text-align:right}
     <div class="row">
       <span class="no m">2023 – now</span>
       <span class="nm">Independent<span class="tag">Now</span><small>Freelance AI engineer</small></span>
-      <span class="ds">Freelancing for my own clients alongside ADP since 2023, and full time since November 2026. Work includes an e-commerce website and app, an AI gym coach, a daily saved-reels digest, an agent-callable PDF toolkit and a YouTube transcriber, plus AI training and advisory.</span>
+      <span class="ds">Freelancing for my own clients alongside ADP since 2023, and full time since November 2026. Apps, AI agents and automations for clients, plus AI training and advisory.</span>
       <span class="lk m dim">—</span>
     </div>
     <div class="row">
@@ -439,20 +550,60 @@ footer .grid>*:last-child{text-align:right}
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact" class="contact">
+<!-- Book -->
+<section id="book" class="contact">
   <div class="grid sh">
-    <h2 class="t m" style="font-size:12px;letter-spacing:.01em;font-weight:400;line-height:1.55">Contact</h2>
-    <p class="d">Tell me what you're trying to build, roughly when you need it, and your budget range. I'll reply within a day.</p>
+    <h2 class="t m">Book a call</h2>
+    <p class="d">Pick a time that suits you. This scheduler is a lightweight version of the booking tool I built for a client (project 03), so booking is also a demo.</p>
     <span class="n m live">Available</span>
   </div>
-  <div class="grid">
-    <h2><a href="mailto:bandreddysrisailohith@gmail.com?subject=Project%20enquiry">bandreddysrisailohith<br>@gmail.com</a></h2>
+
+  <div class="book" id="bookBox">
+    <div class="bk-info">
+      <span class="m dim">Intro call</span>
+      <h3>30 minutes about your project</h3>
+      <p>Tell me what you're trying to fix. You'll leave with an honest view of whether AI is the right answer, and what a build would look like.</p>
+      <dl>
+        <dt>Length</dt><dd>30 min</dd>
+        <dt>Where</dt><dd>Google Meet, link sent by email</dd>
+        <dt>Cost</dt><dd>Free</dd>
+      </dl>
+      <p class="note">Times are shown in your time zone. Slots run 10:00–20:00 India time, Monday to Saturday.</p>
+    </div>
+    <div class="bk-cal">
+      <div class="cal-head"><b id="calTitle">Month</b><span class="cal-nav"><button type="button" id="prevM" aria-label="Previous month">←</button><button type="button" id="nextM" aria-label="Next month">→</button></span></div>
+      <div class="cal" id="cal" role="grid" aria-label="Choose a day"></div>
+      <p class="tz">Your time zone: <span id="tzName"></span></p>
+    </div>
+    <div class="bk-slots">
+      <p class="m dim slots-h" id="slotsHead">Pick a day</p>
+      <div class="slots" id="slots"><p class="empty">Choose a highlighted day to see open times.</p></div>
+    </div>
+    <div class="bk-form">
+      <div class="picked"><div><span class="m dim">Your slot</span><br><b id="pickedTxt"></b></div><button type="button" class="linkbtn m" id="backBtn">Change</button></div>
+      <form id="bkForm" novalidate>
+        <div class="two">
+          <div class="fld"><label for="fName">Name</label><input id="fName" autocomplete="name" required></div>
+          <div class="fld"><label for="fEmail">Email</label><input id="fEmail" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="fld"><label for="fCo">Company (optional)</label><input id="fCo" autocomplete="organization"></div>
+        <div class="fld"><label for="fMsg">What would you like to build or fix?</label><textarea id="fMsg" required></textarea></div>
+        <p class="err" id="fErr" role="alert"></p>
+        <button type="submit" class="btn m">Request this slot</button>
+      </form>
+    </div>
+    <div class="done" id="done">
+      <span class="m dim">One last step</span>
+      <h3>Send the email that just opened, and the slot is yours.</h3>
+      <p id="doneTxt"></p>
+      <div class="ctas m"><a class="btn" id="icsBtn" href="#" download="call-with-sri-sai-lohith.ics">Add to my calendar</a><a class="btn ghost" id="mailAgain" href="#">Email didn't open? Try again</a><button type="button" class="linkbtn" id="restart">Book another time</button></div>
+    </div>
   </div>
+
   <div class="grid cols m">
-    <div><span class="dim">Email</span><br><button class="copy u" id="copyBtn" type="button">Copy address</button></div>
+    <div><span class="dim">Prefer email?</span><br><a class="u" href="mailto:bandreddysrisailohith@gmail.com?subject=Project%20enquiry">bandreddysrisailohith@gmail.com</a><br><button class="copy u" id="copyBtn" type="button">Copy address</button></div>
     <div><span class="dim">Elsewhere</span><br><a class="u" href="https://www.linkedin.com/in/srisailohith/" target="_blank" rel="noopener">LinkedIn</a>, <a class="u" href="https://github.com/lohith261" target="_blank" rel="noopener">GitHub</a></div>
-    <div><span class="dim">Based in</span><br>Hyderabad, India<br>Remote worldwide</div>
+    <div><span class="dim">Based in</span><br>Hyderabad, India<br>Working with clients remotely</div>
     <div><span class="dim">Local time</span><br><span id="clock2">IST</span></div>
   </div>
 </section>
@@ -462,13 +613,14 @@ footer .grid>*:last-child{text-align:right}
   <div class="grid m dim">
     <span style="grid-column:1/5">© <span id="yr">2026</span> B. Sri Sai Lohith</span>
     <span style="grid-column:5/9">Plain HTML &amp; CSS, no framework</span>
-    <span style="grid-column:9/13"><button class="tbtn" id="themeBtn" type="button">Dark mode: <span id="themeState">auto</span></button></span>
+    <span style="grid-column:9/13"><button class="tbtn dim" id="themeBtn" type="button">Dark mode: <span id="themeState">auto</span></button></span>
   </div>
 </footer>
 
 </div>
 <script>
 (function(){
+  var EMAIL='bandreddysrisailohith@gmail.com';
   var root=document.documentElement,state=document.getElementById('themeState');
   function cur(){return root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}
   try{var t=localStorage.getItem('theme');if(t)root.setAttribute('data-theme',t);}catch(e){}
@@ -478,14 +630,87 @@ footer .grid>*:last-child{text-align:right}
     var n=cur()==='dark'?'light':'dark';root.setAttribute('data-theme',n);
     try{localStorage.setItem('theme',n);}catch(e){}paint();
   });
-  var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false});
-  function tick(){var s=fmt.format(new Date())+' IST';document.getElementById('clock').textContent=s;document.getElementById('clock2').textContent=s;}
+  var istFmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',hour12:false});
+  function tick(){var s=istFmt.format(new Date())+' IST';document.getElementById('clock').textContent=s;document.getElementById('clock2').textContent=s;}
   tick();setInterval(tick,15000);
   document.getElementById('copyBtn').addEventListener('click',function(){
     var b=this;if(!navigator.clipboard)return;
-    navigator.clipboard.writeText('bandreddysrisailohith@gmail.com').then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy address';},1600);});
+    navigator.clipboard.writeText(EMAIL).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy address';},1600);});
   });
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* ---- Booking demo ---- */
+  var IST_OFF=330, START_H=10, END_H=20, STEP=30, DAYS_AHEAD=21, LEAD_H=12;
+  var box=document.getElementById('bookBox'),calEl=document.getElementById('cal'),slotsEl=document.getElementById('slots');
+  var localTz=Intl.DateTimeFormat().resolvedOptions().timeZone||'local time';
+  var sameTz=new Date().getTimezoneOffset()===-IST_OFF;
+  document.getElementById('tzName').textContent=localTz.replace(/_/g,' ');
+  function istParts(d){var x=new Date(d.getTime()+IST_OFF*60000);return {y:x.getUTCFullYear(),m:x.getUTCMonth(),d:x.getUTCDate(),w:x.getUTCDay()};}
+  function istToDate(y,m,d,h,min){return new Date(Date.UTC(y,m,d,h,min)-IST_OFF*60000);}
+  var today=istParts(new Date());
+  var view={y:today.y,m:today.m},picked=null,slotDate=null;
+  var mNames=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  function key(y,m,d){return y*10000+m*100+d;}
+  var lastDay=istParts(new Date(Date.now()+DAYS_AHEAD*864e5));
+  function slotsFor(y,m,d){
+    var out=[],min=Date.now()+LEAD_H*36e5;
+    for(var t=START_H*60;t<END_H*60;t+=STEP){var dt=istToDate(y,m,d,Math.floor(t/60),t%60);if(dt.getTime()>=min)out.push(dt);}
+    return out;
+  }
+  function isOpen(y,m,d){
+    var k=key(y,m,d);if(k<key(today.y,today.m,today.d)||k>key(lastDay.y,lastDay.m,lastDay.d))return false;
+    if(new Date(Date.UTC(y,m,d)).getUTCDay()===0)return false;
+    return slotsFor(y,m,d).length>0;
+  }
+  function renderCal(){
+    document.getElementById('calTitle').textContent=mNames[view.m]+' '+view.y;
+    var html='';['Mo','Tu','We','Th','Fr','Sa','Su'].forEach(function(w){html+='<span class="dow">'+w+'</span>';});
+    var first=new Date(Date.UTC(view.y,view.m,1)).getUTCDay(),lead=(first+6)%7,n=new Date(Date.UTC(view.y,view.m+1,0)).getUTCDate();
+    for(var i=0;i<lead;i++)html+='<span></span>';
+    for(var d=1;d<=n;d++){
+      var open=isOpen(view.y,view.m,d),isT=key(view.y,view.m,d)===key(today.y,today.m,today.d),sel=picked&&picked.y===view.y&&picked.m===view.m&&picked.d===d;
+      html+='<button type="button" data-d="'+d+'" class="'+(open?'open ':'')+(isT?'today ':'')+(sel?'sel':'')+'"'+(open?'':' disabled')+' aria-label="'+d+' '+mNames[view.m]+(open?', available':'')+'">'+d+'</button>';
+    }
+    calEl.innerHTML=html;
+    document.getElementById('prevM').disabled=(view.y===today.y&&view.m===today.m);
+    document.getElementById('nextM').disabled=(view.y*12+view.m>=lastDay.y*12+lastDay.m);
+  }
+  var tFmt=new Intl.DateTimeFormat(undefined,{hour:'numeric',minute:'2-digit'});
+  var dFmt=new Intl.DateTimeFormat(undefined,{weekday:'long',day:'numeric',month:'long'});
+  function renderSlots(){
+    var list=slotsFor(picked.y,picked.m,picked.d);
+    document.getElementById('slotsHead').textContent=new Intl.DateTimeFormat(undefined,{weekday:'short',day:'numeric',month:'short',timeZone:'UTC'}).format(new Date(Date.UTC(picked.y,picked.m,picked.d)))+' · '+list.length+' open';
+    slotsEl.innerHTML=list.map(function(dt){return '<button type="button" data-t="'+dt.getTime()+'"><span>'+tFmt.format(dt)+'</span>'+(sameTz?'':'<small>'+istFmt.format(dt)+' IST</small>')+'</button>';}).join('');
+  }
+  calEl.addEventListener('click',function(e){var b=e.target.closest('button');if(!b||b.disabled)return;picked={y:view.y,m:view.m,d:+b.dataset.d};renderCal();renderSlots();});
+  document.getElementById('prevM').addEventListener('click',function(){view.m--;if(view.m<0){view.m=11;view.y--;}renderCal();});
+  document.getElementById('nextM').addEventListener('click',function(){view.m++;if(view.m>11){view.m=0;view.y++;}renderCal();});
+  function whenText(dt){return dFmt.format(dt)+', '+tFmt.format(dt)+(sameTz?' IST':' ('+istFmt.format(dt)+' IST)');}
+  slotsEl.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;slotDate=new Date(+b.dataset.t);
+    document.getElementById('pickedTxt').textContent=whenText(slotDate);box.classList.add('step2');document.getElementById('fName').focus();});
+  document.getElementById('backBtn').addEventListener('click',function(){box.classList.remove('step2');});
+  var mailHref='';
+  function pad(n){return (n<10?'0':'')+n;}
+  function icsStamp(d){return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+'T'+pad(d.getUTCHours())+pad(d.getUTCMinutes())+'00Z';}
+  document.getElementById('bkForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('fName').value.trim(),em=document.getElementById('fEmail').value.trim(),co=document.getElementById('fCo').value.trim(),msg=document.getElementById('fMsg').value.trim(),err=document.getElementById('fErr');
+    if(!n||!em||!msg){err.textContent='Please fill in your name, email and a line about the project.';return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent='That email address doesn\'t look right.';return;}
+    err.textContent='';
+    var when=whenText(slotDate);
+    var body='Hi Lohith,\n\nI\'d like to book an intro call.\n\nSlot: '+when+'\nName: '+n+'\nEmail: '+em+(co?'\nCompany: '+co:'')+'\n\nWhat I\'d like to build or fix:\n'+msg+'\n';
+    mailHref='mailto:'+EMAIL+'?subject='+encodeURIComponent('Intro call request: '+when)+'&body='+encodeURIComponent(body);
+    var end=new Date(slotDate.getTime()+30*60000);
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//srisailohith//booking//EN','BEGIN:VEVENT','UID:'+slotDate.getTime()+'-'+Math.random().toString(36).slice(2)+'@srisailohith','DTSTAMP:'+icsStamp(new Date()),'DTSTART:'+icsStamp(slotDate),'DTEND:'+icsStamp(end),'SUMMARY:Intro call with Sri Sai Lohith','DESCRIPTION:Requested slot. A Google Meet link will follow by email.','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    document.getElementById('icsBtn').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics);
+    document.getElementById('mailAgain').href=mailHref;
+    document.getElementById('doneTxt').textContent='Your request for '+when+' is written and ready in your email app. Once it arrives I\'ll confirm within a day and send a Google Meet link to '+em+'.';
+    box.classList.remove('step2');box.classList.add('step3');
+    window.location.href=mailHref;
+  });
+  document.getElementById('restart').addEventListener('click',function(){box.classList.remove('step3');picked=null;slotDate=null;renderCal();slotsEl.innerHTML='<p class="empty">Choose a highlighted day to see open times.</p>';document.getElementById('slotsHead').textContent='Pick a day';});
+  renderCal();
 })();
 </script>
 </body>
